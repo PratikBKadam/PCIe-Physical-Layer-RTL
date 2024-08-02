@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at frame_receiver.v(348): always construct contains both blocking and non-blocking assignments File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 348
+Warning (10268): Verilog HDL information at frame_receiver.v(370): always construct contains both blocking and non-blocking assignments File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 370

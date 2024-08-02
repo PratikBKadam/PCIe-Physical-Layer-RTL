@@ -1,0 +1,553 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "data_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_4[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sender_error_LTSSM",
+					"strict" : false
+				},
+				{
+					"name" : "sender_error_DLL",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[20]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[21]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[22]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[19]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[23]",
+					"strict" : false
+				},
+				{
+					"name" : "TLP_sent",
+					"strict" : false
+				},
+				{
+					"name" : "nullified_TLP_sent",
+					"strict" : false
+				},
+				{
+					"name" : "DLLP_sent",
+					"strict" : false
+				},
+				{
+					"name" : "framer_en",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[32]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[22]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[23]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[20]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[19]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[21]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[33]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[34]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[35]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[36]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[37]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[38]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[16]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[16]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[39]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[24]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[24]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[56]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[25]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[25]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[57]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[26]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[26]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[58]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[27]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[27]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[59]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[28]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[28]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[60]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[29]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[29]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[61]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[30]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[62]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[30]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[31]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[31]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[63]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[48]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[17]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[49]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[17]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_DLL[18]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[50]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[18]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[51]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[52]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[53]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[54]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[55]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[40]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[41]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[42]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[43]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[44]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[45]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[46]",
+					"strict" : false
+				},
+				{
+					"name" : "data_in_LTSSM[47]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

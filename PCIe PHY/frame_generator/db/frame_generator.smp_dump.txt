@@ -1,0 +1,7 @@
+
+State Machine - |frame_generator|os_seq
+Name os_seq.11 os_seq.10 os_seq.01 os_seq.00 
+os_seq.00 0 0 0 0 
+os_seq.01 0 0 1 1 
+os_seq.10 0 1 0 1 
+os_seq.11 1 0 0 1 

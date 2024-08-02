@@ -1,0 +1,14 @@
+
+State Machine - |frame_receiver|send_seq
+Name send_seq.11 send_seq.10 send_seq.01 send_seq.00 
+send_seq.00 0 0 0 0 
+send_seq.01 0 0 1 1 
+send_seq.10 0 1 0 1 
+send_seq.11 1 0 0 1 
+
+State Machine - |frame_receiver|seq
+Name seq.11 seq.10 seq.01 seq.00 
+seq.00 0 0 0 0 
+seq.01 0 0 1 1 
+seq.10 0 1 0 1 
+seq.11 1 0 0 1 

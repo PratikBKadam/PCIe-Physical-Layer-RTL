@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Sat Jul 13 18:29:21 2024
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : frame_receiver
+Top-level Entity Name : frame_receiver
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 318
+Total pins : 140
+Total virtual pins : 0
+Total block memory bits : 0
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

@@ -1,0 +1,22 @@
+module tb;
+reg clk,rst,
+reg [7:0] data_1,data_2,data_3,data_4,
+wire[63:0] data_in_LTSSM,
+wire TLP_sent,DLLP_sent,nullified_TLP_sent,DLL_en,
+wire[31:0] data_in_DLL,
+wire receiver_error_LTSSM,receiver_error_DLL;
+wire [127:0]buff;
+frame_receiver dut();
+initial begin
+clk=1;
+forever #5 clk=~clk;
+end
+initial begin
+rst=0;
+data_1,data_2,data_3,data_4=32'h0;
+#10;
+rst=1;
+#10;
+
+end
+endmodule

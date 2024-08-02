@@ -1,0 +1,42 @@
+module tb;
+reg clk,rst,buffer_en,framer_en;
+reg [31:0] data_in;
+wire [7:0] data_1,data_2,data_3,data_4;
+task1 dut(.clk(clk),.rst(rst),.buffer_en(buffer_en),.framer_en(framer_en),.data_in(data_in),.data_1(data_1),.data_2(data_2),.data_3(data_3),
+.data_4(data_4));
+initial begin
+clk=1;
+forever #5 clk=~clk;
+end
+initial begin
+rst=1'b0;
+buffer_en=1'b0;
+framer_en=1'b0;
+data_in=32'h0;
+#10;
+rst=1'b1;
+buffer_en=1'b1;
+framer_en=1'b0;
+data_in={8'd1,8'd2,8'd3,8'd4};
+#10;
+rst=1'b1;
+buffer_en=1'b1;
+framer_en=1'b1;
+data_in={8'd5,8'd6,8'd7,8'd8};
+#10;
+rst=1'b1;
+buffer_en=1'b1;
+framer_en=1'b1;
+data_in={8'd9,8'd10,8'd11,8'd12};
+#10;
+rst=1'b1;
+buffer_en=1'b1;
+framer_en=1'b1;
+data_in={8'd13,8'd14,8'h0,8'h0};
+#10;
+buffer_en=1'b0;
+#10;
+framer_en=1'b0;
+#10;
+end
+endmodule

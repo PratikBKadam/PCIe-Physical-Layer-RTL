@@ -1,0 +1,666 @@
+Analysis & Synthesis report for frame_receiver
+Sat Jul 13 18:29:21 2024
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |frame_receiver|send_seq
+  9. State Machine - |frame_receiver|seq
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |frame_receiver
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Jul 13 18:29:21 2024       ;
+; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                   ; frame_receiver                              ;
+; Top-level Entity Name           ; frame_receiver                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 318                                         ;
+; Total pins                      ; 140                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; frame_receiver     ; frame_receiver     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                   ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------+---------+
+; frame_receiver.v                 ; yes             ; User Verilog HDL File  ; G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 319       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 491       ;
+;     -- 7 input functions                    ; 2         ;
+;     -- 6 input functions                    ; 127       ;
+;     -- 5 input functions                    ; 142       ;
+;     -- 4 input functions                    ; 36        ;
+;     -- <=3 input functions                  ; 184       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 318       ;
+;                                             ;           ;
+; I/O pins                                    ; 140       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 318       ;
+; Total fan-out                               ; 4008      ;
+; Average fan-out                             ; 3.68      ;
++---------------------------------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
+; |frame_receiver            ; 491 (491)           ; 318 (318)                 ; 0                 ; 0          ; 140  ; 0            ; |frame_receiver     ; frame_receiver ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |frame_receiver|send_seq                            ;
++-------------+-------------+-------------+-------------+-------------+
+; Name        ; send_seq.11 ; send_seq.10 ; send_seq.01 ; send_seq.00 ;
++-------------+-------------+-------------+-------------+-------------+
+; send_seq.00 ; 0           ; 0           ; 0           ; 0           ;
+; send_seq.01 ; 0           ; 0           ; 1           ; 1           ;
+; send_seq.10 ; 0           ; 1           ; 0           ; 1           ;
+; send_seq.11 ; 1           ; 0           ; 0           ; 1           ;
++-------------+-------------+-------------+-------------+-------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------+
+; State Machine - |frame_receiver|seq        ;
++--------+--------+--------+--------+--------+
+; Name   ; seq.11 ; seq.10 ; seq.01 ; seq.00 ;
++--------+--------+--------+--------+--------+
+; seq.00 ; 0      ; 0      ; 0      ; 0      ;
+; seq.01 ; 0      ; 0      ; 1      ; 1      ;
+; seq.10 ; 0      ; 1      ; 0      ; 1      ;
+; seq.11 ; 1      ; 0      ; 0      ; 1      ;
++--------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; data_in_LTSSM[17]~reg0                ; Merged with data_in_LTSSM[16]~reg0     ;
+; data_in_LTSSM[18]~reg0                ; Merged with data_in_LTSSM[16]~reg0     ;
+; send_seq.11                           ; Lost fanout                            ;
+; send_seq~4                            ; Lost fanout                            ;
+; send_seq~5                            ; Lost fanout                            ;
+; seq~8                                 ; Lost fanout                            ;
+; seq~9                                 ; Lost fanout                            ;
+; data_in_LTSSM[16]~reg0                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 8 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 318   ;
+; Number of registers using Synchronous Clear  ; 210   ;
+; Number of registers using Synchronous Load   ; 168   ;
+; Number of registers using Asynchronous Clear ; 318   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 182   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 5:1                ; 40 bits   ; 120 LEs       ; 0 LEs                ; 120 LEs                ; Yes        ; |frame_receiver|data_in_LTSSM[37]~reg0 ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 0 LEs                ; 96 LEs                 ; Yes        ; |frame_receiver|data_in_DLL[0]~reg0    ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 0 LEs                ; 112 LEs                ; Yes        ; |frame_receiver|buffer[68]             ;
+; 21:1               ; 32 bits   ; 448 LEs       ; 0 LEs                ; 448 LEs                ; Yes        ; |frame_receiver|buffer[93]             ;
+; 21:1               ; 24 bits   ; 336 LEs       ; 0 LEs                ; 336 LEs                ; Yes        ; |frame_receiver|buffer[120]            ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 0 LEs                ; 112 LEs                ; Yes        ; |frame_receiver|data_in_DLL[12]~reg0   ;
+; 21:1               ; 16 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |frame_receiver|data_in_DLL[17]~reg0   ;
+; 22:1               ; 16 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; Yes        ; |frame_receiver|data_in_LTSSM[0]~reg0  ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 16 LEs               ; 112 LEs                ; Yes        ; |frame_receiver|buffer[13]             ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |frame_receiver|buffer[36]             ;
+; 24:1               ; 16 bits   ; 256 LEs       ; 32 LEs               ; 224 LEs                ; Yes        ; |frame_receiver|buffer[22]             ;
+; 24:1               ; 16 bits   ; 256 LEs       ; 0 LEs                ; 256 LEs                ; Yes        ; |frame_receiver|buffer[63]             ;
+; 24:1               ; 8 bits    ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |frame_receiver|buffer[40]             ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |frame_receiver|Selector188            ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |frame_receiver|seq                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |frame_receiver ;
++----------------+----------+----------------------------------------------------+
+; Parameter Name ; Value    ; Type                                               ;
++----------------+----------+----------------------------------------------------+
+; D0_0           ; 00000000 ; Unsigned Binary                                    ;
+; D1_0           ; 00000001 ; Unsigned Binary                                    ;
+; D2_0           ; 00000010 ; Unsigned Binary                                    ;
+; D3_0           ; 00000011 ; Unsigned Binary                                    ;
+; D4_0           ; 00000100 ; Unsigned Binary                                    ;
+; D5_0           ; 00000101 ; Unsigned Binary                                    ;
+; D6_0           ; 00000110 ; Unsigned Binary                                    ;
+; D7_0           ; 00000111 ; Unsigned Binary                                    ;
+; D8_0           ; 00001000 ; Unsigned Binary                                    ;
+; D9_0           ; 00001001 ; Unsigned Binary                                    ;
+; D10_0          ; 00001010 ; Unsigned Binary                                    ;
+; D11_0          ; 00001011 ; Unsigned Binary                                    ;
+; D12_0          ; 00001100 ; Unsigned Binary                                    ;
+; D13_0          ; 00001101 ; Unsigned Binary                                    ;
+; D14_0          ; 00001110 ; Unsigned Binary                                    ;
+; D15_0          ; 00001111 ; Unsigned Binary                                    ;
+; D16_0          ; 00010000 ; Unsigned Binary                                    ;
+; D17_0          ; 00010001 ; Unsigned Binary                                    ;
+; D18_0          ; 00010010 ; Unsigned Binary                                    ;
+; D19_0          ; 00010011 ; Unsigned Binary                                    ;
+; D20_0          ; 00010100 ; Unsigned Binary                                    ;
+; D21_0          ; 00010101 ; Unsigned Binary                                    ;
+; D22_0          ; 00010110 ; Unsigned Binary                                    ;
+; D23_0          ; 00010111 ; Unsigned Binary                                    ;
+; D24_0          ; 00011000 ; Unsigned Binary                                    ;
+; D25_0          ; 00011001 ; Unsigned Binary                                    ;
+; D26_0          ; 00011010 ; Unsigned Binary                                    ;
+; D27_0          ; 00011011 ; Unsigned Binary                                    ;
+; D28_0          ; 00011100 ; Unsigned Binary                                    ;
+; D29_0          ; 00011101 ; Unsigned Binary                                    ;
+; D30_0          ; 00011110 ; Unsigned Binary                                    ;
+; D31_0          ; 00011111 ; Unsigned Binary                                    ;
+; D0_1           ; 00100000 ; Unsigned Binary                                    ;
+; D1_1           ; 00100001 ; Unsigned Binary                                    ;
+; D2_1           ; 00100010 ; Unsigned Binary                                    ;
+; D3_1           ; 00100011 ; Unsigned Binary                                    ;
+; D4_1           ; 00100100 ; Unsigned Binary                                    ;
+; D5_1           ; 00100101 ; Unsigned Binary                                    ;
+; D6_1           ; 00100110 ; Unsigned Binary                                    ;
+; D7_1           ; 00100111 ; Unsigned Binary                                    ;
+; D8_1           ; 00101000 ; Unsigned Binary                                    ;
+; D9_1           ; 00101001 ; Unsigned Binary                                    ;
+; D10_1          ; 00101010 ; Unsigned Binary                                    ;
+; D11_1          ; 00101011 ; Unsigned Binary                                    ;
+; D12_1          ; 00101100 ; Unsigned Binary                                    ;
+; D13_1          ; 00101101 ; Unsigned Binary                                    ;
+; D14_1          ; 00101110 ; Unsigned Binary                                    ;
+; D15_1          ; 00101111 ; Unsigned Binary                                    ;
+; D16_1          ; 00110000 ; Unsigned Binary                                    ;
+; D17_1          ; 00110001 ; Unsigned Binary                                    ;
+; D18_1          ; 00110010 ; Unsigned Binary                                    ;
+; D19_1          ; 00110011 ; Unsigned Binary                                    ;
+; D20_1          ; 00110100 ; Unsigned Binary                                    ;
+; D21_1          ; 00110101 ; Unsigned Binary                                    ;
+; D22_1          ; 00110110 ; Unsigned Binary                                    ;
+; D23_1          ; 00110111 ; Unsigned Binary                                    ;
+; D24_1          ; 00111000 ; Unsigned Binary                                    ;
+; D25_1          ; 00111001 ; Unsigned Binary                                    ;
+; D26_1          ; 00111010 ; Unsigned Binary                                    ;
+; D27_1          ; 00111011 ; Unsigned Binary                                    ;
+; D28_1          ; 00111100 ; Unsigned Binary                                    ;
+; D29_1          ; 00111101 ; Unsigned Binary                                    ;
+; D30_1          ; 00111110 ; Unsigned Binary                                    ;
+; D31_1          ; 00111111 ; Unsigned Binary                                    ;
+; D0_2           ; 01000000 ; Unsigned Binary                                    ;
+; D1_2           ; 01000001 ; Unsigned Binary                                    ;
+; D2_2           ; 01000010 ; Unsigned Binary                                    ;
+; D3_2           ; 01000011 ; Unsigned Binary                                    ;
+; D4_2           ; 01000100 ; Unsigned Binary                                    ;
+; D5_2           ; 01000101 ; Unsigned Binary                                    ;
+; D6_2           ; 01000110 ; Unsigned Binary                                    ;
+; D7_2           ; 01000111 ; Unsigned Binary                                    ;
+; D8_2           ; 01001000 ; Unsigned Binary                                    ;
+; D9_2           ; 01001001 ; Unsigned Binary                                    ;
+; D10_2          ; 01001010 ; Unsigned Binary                                    ;
+; D11_2          ; 01001011 ; Unsigned Binary                                    ;
+; D12_2          ; 01001100 ; Unsigned Binary                                    ;
+; D13_2          ; 01001101 ; Unsigned Binary                                    ;
+; D14_2          ; 01001110 ; Unsigned Binary                                    ;
+; D15_2          ; 01001111 ; Unsigned Binary                                    ;
+; D16_2          ; 01010000 ; Unsigned Binary                                    ;
+; D17_2          ; 01010001 ; Unsigned Binary                                    ;
+; D18_2          ; 01010010 ; Unsigned Binary                                    ;
+; D19_2          ; 01010011 ; Unsigned Binary                                    ;
+; D20_2          ; 01010100 ; Unsigned Binary                                    ;
+; D21_2          ; 01010101 ; Unsigned Binary                                    ;
+; D22_2          ; 01010110 ; Unsigned Binary                                    ;
+; D23_2          ; 01010111 ; Unsigned Binary                                    ;
+; D24_2          ; 01011000 ; Unsigned Binary                                    ;
+; D25_2          ; 01011001 ; Unsigned Binary                                    ;
+; D26_2          ; 01011010 ; Unsigned Binary                                    ;
+; D27_2          ; 01011011 ; Unsigned Binary                                    ;
+; D28_2          ; 01011100 ; Unsigned Binary                                    ;
+; D29_2          ; 01011101 ; Unsigned Binary                                    ;
+; D30_2          ; 01011110 ; Unsigned Binary                                    ;
+; D31_2          ; 01011111 ; Unsigned Binary                                    ;
+; D0_3           ; 01100000 ; Unsigned Binary                                    ;
+; D1_3           ; 01100001 ; Unsigned Binary                                    ;
+; D2_3           ; 01100010 ; Unsigned Binary                                    ;
+; D3_3           ; 01100011 ; Unsigned Binary                                    ;
+; D4_3           ; 01100100 ; Unsigned Binary                                    ;
+; D5_3           ; 01100101 ; Unsigned Binary                                    ;
+; D6_3           ; 01100110 ; Unsigned Binary                                    ;
+; D7_3           ; 01100111 ; Unsigned Binary                                    ;
+; D8_3           ; 01101000 ; Unsigned Binary                                    ;
+; D9_3           ; 01101001 ; Unsigned Binary                                    ;
+; D10_3          ; 01101010 ; Unsigned Binary                                    ;
+; D11_3          ; 01101011 ; Unsigned Binary                                    ;
+; D12_3          ; 01101100 ; Unsigned Binary                                    ;
+; D13_3          ; 01101101 ; Unsigned Binary                                    ;
+; D14_3          ; 01101110 ; Unsigned Binary                                    ;
+; D15_3          ; 01101111 ; Unsigned Binary                                    ;
+; D16_3          ; 01110000 ; Unsigned Binary                                    ;
+; D17_3          ; 01110001 ; Unsigned Binary                                    ;
+; D18_3          ; 01110010 ; Unsigned Binary                                    ;
+; D19_3          ; 01110011 ; Unsigned Binary                                    ;
+; D20_3          ; 01110100 ; Unsigned Binary                                    ;
+; D21_3          ; 01110101 ; Unsigned Binary                                    ;
+; D22_3          ; 01110110 ; Unsigned Binary                                    ;
+; D23_3          ; 01110111 ; Unsigned Binary                                    ;
+; D24_3          ; 01111000 ; Unsigned Binary                                    ;
+; D25_3          ; 01111001 ; Unsigned Binary                                    ;
+; D26_3          ; 01111010 ; Unsigned Binary                                    ;
+; D27_3          ; 01111011 ; Unsigned Binary                                    ;
+; D28_3          ; 01111100 ; Unsigned Binary                                    ;
+; D29_3          ; 01111101 ; Unsigned Binary                                    ;
+; D30_3          ; 01111110 ; Unsigned Binary                                    ;
+; D31_3          ; 01111111 ; Unsigned Binary                                    ;
+; D0_4           ; 10000000 ; Unsigned Binary                                    ;
+; D1_4           ; 10000001 ; Unsigned Binary                                    ;
+; D2_4           ; 10000010 ; Unsigned Binary                                    ;
+; D3_4           ; 10000011 ; Unsigned Binary                                    ;
+; D4_4           ; 10000100 ; Unsigned Binary                                    ;
+; D5_4           ; 10000101 ; Unsigned Binary                                    ;
+; D6_4           ; 10000110 ; Unsigned Binary                                    ;
+; D7_4           ; 10000111 ; Unsigned Binary                                    ;
+; D8_4           ; 10001000 ; Unsigned Binary                                    ;
+; D9_4           ; 10001001 ; Unsigned Binary                                    ;
+; D10_4          ; 10001010 ; Unsigned Binary                                    ;
+; D11_4          ; 10001011 ; Unsigned Binary                                    ;
+; D12_4          ; 10001100 ; Unsigned Binary                                    ;
+; D13_4          ; 10001101 ; Unsigned Binary                                    ;
+; D14_4          ; 10001110 ; Unsigned Binary                                    ;
+; D15_4          ; 10001111 ; Unsigned Binary                                    ;
+; D16_4          ; 10010000 ; Unsigned Binary                                    ;
+; D17_4          ; 10010001 ; Unsigned Binary                                    ;
+; D18_4          ; 10010010 ; Unsigned Binary                                    ;
+; D19_4          ; 10010011 ; Unsigned Binary                                    ;
+; D20_4          ; 10010100 ; Unsigned Binary                                    ;
+; D21_4          ; 10010101 ; Unsigned Binary                                    ;
+; D22_4          ; 10010110 ; Unsigned Binary                                    ;
+; D23_4          ; 10010111 ; Unsigned Binary                                    ;
+; D24_4          ; 10011000 ; Unsigned Binary                                    ;
+; D25_4          ; 10011001 ; Unsigned Binary                                    ;
+; D26_4          ; 10011010 ; Unsigned Binary                                    ;
+; D27_4          ; 10011011 ; Unsigned Binary                                    ;
+; D28_4          ; 10011100 ; Unsigned Binary                                    ;
+; D29_4          ; 10011101 ; Unsigned Binary                                    ;
+; D30_4          ; 10011110 ; Unsigned Binary                                    ;
+; D31_4          ; 10011111 ; Unsigned Binary                                    ;
+; D0_5           ; 10100000 ; Unsigned Binary                                    ;
+; D1_5           ; 10100001 ; Unsigned Binary                                    ;
+; D2_5           ; 10100010 ; Unsigned Binary                                    ;
+; D3_5           ; 10100011 ; Unsigned Binary                                    ;
+; D4_5           ; 10100100 ; Unsigned Binary                                    ;
+; D5_5           ; 10100101 ; Unsigned Binary                                    ;
+; D6_5           ; 10100110 ; Unsigned Binary                                    ;
+; D7_5           ; 10100111 ; Unsigned Binary                                    ;
+; D8_5           ; 10101000 ; Unsigned Binary                                    ;
+; D9_5           ; 10101001 ; Unsigned Binary                                    ;
+; D10_5          ; 10101010 ; Unsigned Binary                                    ;
+; D11_5          ; 10101011 ; Unsigned Binary                                    ;
+; D12_5          ; 10101100 ; Unsigned Binary                                    ;
+; D13_5          ; 10101101 ; Unsigned Binary                                    ;
+; D14_5          ; 10101110 ; Unsigned Binary                                    ;
+; D15_5          ; 10101111 ; Unsigned Binary                                    ;
+; D16_5          ; 10110000 ; Unsigned Binary                                    ;
+; D17_5          ; 10110001 ; Unsigned Binary                                    ;
+; D18_5          ; 10110010 ; Unsigned Binary                                    ;
+; D19_5          ; 10110011 ; Unsigned Binary                                    ;
+; D20_5          ; 10110100 ; Unsigned Binary                                    ;
+; D21_5          ; 10110101 ; Unsigned Binary                                    ;
+; D22_5          ; 10110110 ; Unsigned Binary                                    ;
+; D23_5          ; 10110111 ; Unsigned Binary                                    ;
+; D24_5          ; 10111000 ; Unsigned Binary                                    ;
+; D25_5          ; 10111001 ; Unsigned Binary                                    ;
+; D26_5          ; 10111010 ; Unsigned Binary                                    ;
+; D27_5          ; 10111011 ; Unsigned Binary                                    ;
+; D28_5          ; 10111100 ; Unsigned Binary                                    ;
+; D29_5          ; 10111101 ; Unsigned Binary                                    ;
+; D30_5          ; 10111110 ; Unsigned Binary                                    ;
+; D31_5          ; 10111111 ; Unsigned Binary                                    ;
+; D0_6           ; 11000000 ; Unsigned Binary                                    ;
+; D1_6           ; 11000001 ; Unsigned Binary                                    ;
+; D2_6           ; 11000010 ; Unsigned Binary                                    ;
+; D3_6           ; 11000011 ; Unsigned Binary                                    ;
+; D4_6           ; 11000100 ; Unsigned Binary                                    ;
+; D5_6           ; 11000101 ; Unsigned Binary                                    ;
+; D6_6           ; 11000110 ; Unsigned Binary                                    ;
+; D7_6           ; 11000111 ; Unsigned Binary                                    ;
+; D8_6           ; 11001000 ; Unsigned Binary                                    ;
+; D9_6           ; 11001001 ; Unsigned Binary                                    ;
+; D10_6          ; 11001010 ; Unsigned Binary                                    ;
+; D11_6          ; 11001011 ; Unsigned Binary                                    ;
+; D12_6          ; 11001100 ; Unsigned Binary                                    ;
+; D13_6          ; 11001101 ; Unsigned Binary                                    ;
+; D14_6          ; 11001110 ; Unsigned Binary                                    ;
+; D15_6          ; 11001111 ; Unsigned Binary                                    ;
+; D16_6          ; 11010000 ; Unsigned Binary                                    ;
+; D17_6          ; 11010001 ; Unsigned Binary                                    ;
+; D18_6          ; 11010010 ; Unsigned Binary                                    ;
+; D19_6          ; 11010011 ; Unsigned Binary                                    ;
+; D20_6          ; 11010100 ; Unsigned Binary                                    ;
+; D21_6          ; 11010101 ; Unsigned Binary                                    ;
+; D22_6          ; 11010110 ; Unsigned Binary                                    ;
+; D23_6          ; 11010111 ; Unsigned Binary                                    ;
+; D24_6          ; 11011000 ; Unsigned Binary                                    ;
+; D25_6          ; 11011001 ; Unsigned Binary                                    ;
+; D26_6          ; 11011010 ; Unsigned Binary                                    ;
+; D27_6          ; 11011011 ; Unsigned Binary                                    ;
+; D28_6          ; 11011100 ; Unsigned Binary                                    ;
+; D29_6          ; 11011101 ; Unsigned Binary                                    ;
+; D30_6          ; 11011110 ; Unsigned Binary                                    ;
+; D31_6          ; 11011111 ; Unsigned Binary                                    ;
+; D0_7           ; 11100000 ; Unsigned Binary                                    ;
+; D1_7           ; 11100001 ; Unsigned Binary                                    ;
+; D2_7           ; 11100010 ; Unsigned Binary                                    ;
+; D3_7           ; 11100011 ; Unsigned Binary                                    ;
+; D4_7           ; 11100100 ; Unsigned Binary                                    ;
+; D5_7           ; 11100101 ; Unsigned Binary                                    ;
+; D6_7           ; 11100110 ; Unsigned Binary                                    ;
+; D7_7           ; 11100111 ; Unsigned Binary                                    ;
+; D8_7           ; 11101000 ; Unsigned Binary                                    ;
+; D9_7           ; 11101001 ; Unsigned Binary                                    ;
+; D10_7          ; 11101010 ; Unsigned Binary                                    ;
+; D11_7          ; 11101011 ; Unsigned Binary                                    ;
+; D12_7          ; 11101100 ; Unsigned Binary                                    ;
+; D13_7          ; 11101101 ; Unsigned Binary                                    ;
+; D14_7          ; 11101110 ; Unsigned Binary                                    ;
+; D15_7          ; 11101111 ; Unsigned Binary                                    ;
+; D16_7          ; 11110000 ; Unsigned Binary                                    ;
+; D17_7          ; 11110001 ; Unsigned Binary                                    ;
+; D18_7          ; 11110010 ; Unsigned Binary                                    ;
+; D19_7          ; 11110011 ; Unsigned Binary                                    ;
+; D20_7          ; 11110100 ; Unsigned Binary                                    ;
+; D21_7          ; 11110101 ; Unsigned Binary                                    ;
+; D22_7          ; 11110110 ; Unsigned Binary                                    ;
+; D23_7          ; 11110111 ; Unsigned Binary                                    ;
+; D24_7          ; 11111000 ; Unsigned Binary                                    ;
+; D25_7          ; 11111001 ; Unsigned Binary                                    ;
+; D26_7          ; 11111010 ; Unsigned Binary                                    ;
+; D27_7          ; 11111011 ; Unsigned Binary                                    ;
+; D28_7          ; 11111100 ; Unsigned Binary                                    ;
+; D29_7          ; 11111101 ; Unsigned Binary                                    ;
+; D30_7          ; 11111110 ; Unsigned Binary                                    ;
+; D31_7          ; 11111111 ; Unsigned Binary                                    ;
+; K28_0          ; 00011100 ; Unsigned Binary                                    ;
+; K28_1          ; 00111100 ; Unsigned Binary                                    ;
+; K28_2          ; 01011100 ; Unsigned Binary                                    ;
+; K28_3          ; 01111100 ; Unsigned Binary                                    ;
+; K28_4          ; 10011100 ; Unsigned Binary                                    ;
+; K28_5          ; 10111100 ; Unsigned Binary                                    ;
+; K28_6          ; 11011100 ; Unsigned Binary                                    ;
+; K28_7          ; 11111100 ; Unsigned Binary                                    ;
+; K23_7          ; 11110111 ; Unsigned Binary                                    ;
+; K27_7          ; 11111011 ; Unsigned Binary                                    ;
+; K29_7          ; 11111101 ; Unsigned Binary                                    ;
+; K30_7          ; 11111110 ; Unsigned Binary                                    ;
++----------------+----------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 318                         ;
+;     CLR               ; 22                          ;
+;     CLR SCLR          ; 26                          ;
+;     CLR SCLR SLD      ; 8                           ;
+;     CLR SLD           ; 80                          ;
+;     ENA CLR           ; 6                           ;
+;     ENA CLR SCLR      ; 96                          ;
+;     ENA CLR SCLR SLD  ; 80                          ;
+; arriav_lcell_comb     ; 492                         ;
+;     arith             ; 80                          ;
+;         2 data inputs ; 80                          ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 410                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 90                          ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 36                          ;
+;         5 data inputs ; 142                         ;
+;         6 data inputs ; 127                         ;
+; boundary_port         ; 140                         ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.69                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Sat Jul 13 18:28:54 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off frame_receiver -c frame_receiver
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file frame_receiver.v
+    Info (12023): Found entity 1: frame_receiver File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb.v
+    Info (12023): Found entity 1: tb File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/tb.v Line: 1
+Info (12127): Elaborating entity "frame_receiver" for the top level hierarchy
+Info (10264): Verilog HDL Case Statement information at frame_receiver.v(279): all case item expressions in this case statement are onehot File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 279
+Info (10264): Verilog HDL Case Statement information at frame_receiver.v(298): all case item expressions in this case statement are onehot File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 298
+Info (10264): Verilog HDL Case Statement information at frame_receiver.v(317): all case item expressions in this case statement are onehot File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 317
+Info (10264): Verilog HDL Case Statement information at frame_receiver.v(215): all case item expressions in this case statement are onehot File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 215
+Info (10264): Verilog HDL Case Statement information at frame_receiver.v(403): all case item expressions in this case statement are onehot File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 403
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "data_in_LTSSM[16]" is stuck at GND File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 385
+    Warning (13410): Pin "data_in_LTSSM[17]" is stuck at GND File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 385
+    Warning (13410): Pin "data_in_LTSSM[18]" is stuck at GND File: G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/frame_receiver.v Line: 385
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/output_files/frame_receiver.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 803 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 36 input pins
+    Info (21059): Implemented 104 output pins
+    Info (21061): Implemented 663 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4805 megabytes
+    Info: Processing ended: Sat Jul 13 18:29:21 2024
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:50
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in G:/pratik/Pratik IMP documents/COEP/College/VLSI/PCIe/PCIe PHY/frame_receiver/output_files/frame_receiver.map.smsg.
+
+
